@@ -2,6 +2,8 @@
 import { useMenu } from '@/stores/menuControl';
 import MenuSlot from '../slot/MenuSlot.vue';
 import dashboardIcon from '../icons/dashboardIcon.vue'; // Corrected the typo
+import settingIcon from '../icons/settingIcon.vue';
+import infoIcon from '../icons/infoIcon.vue';
 
 const menuStore = useMenu();
 </script>
@@ -9,11 +11,11 @@ const menuStore = useMenu();
 <template>
   <div class="min-h-screen flex flex-col">
     <!-- Block Header -->
-    <div class="bg-blue-700 border-b flex flex-row justify-start items-center p-4">
-      <div class="flex flex-row justify-start items-center gap-3 text-xl text-white">
+    <div class="bg-blue-700 border-b flex flex-row justify-start items-center p-3">
+      <div class="flex flex-row justify-start items-center gap-2 text-xl text-white">
         <img
           src="../../assets/images/logo.png"
-          class="w-10 h-10 rounded-full border shadow-md ring-1 ring-pink-600 bg-white"
+          class="w-9 h-9 rounded-full border shadow-md ring-1 ring-pink-600 bg-white"
           alt="Logo"
         />
         <!-- title -->
@@ -28,8 +30,8 @@ const menuStore = useMenu();
     <!-- Block Menu -->
     <div class="px-3 flex flex-col gap-2 flex-grow">
       <MenuSlot :icon="dashboardIcon" :title="'Dashboard'" :path="'home'" />
-      <MenuSlot :icon="dashboardIcon" :title="'Setting'" :path="'setting'" />
-      <MenuSlot :icon="dashboardIcon" :title="'About'" :path="'about'" />
+      <MenuSlot :icon="settingIcon" :title="'Setting'" :path="'setting'" />
+      <MenuSlot :icon="infoIcon" :title="'About'" :path="'about'" />
     </div>
     <!-- End Block Menu -->
 
