@@ -20,9 +20,24 @@ const routes = [
     {
       path: 'about',
       name: 'about',
-  
       component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: 'department/:id',
+      name: 'department',
+      component: () => import('@/views/DepartmentView.vue'),
+    },
+    {
+      path: 'edit/profile',
+      name: 'edit-profile',
+      component: () => import('@/views/EditProfileView.vue'),
+    },
+    {
+      path: 'change/password',
+      name: 'edit-password',
+      component: () => import('@/views/ChangePassworView.vue'),
     }
+    
   ]
  }
 ]

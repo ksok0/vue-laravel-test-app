@@ -4,19 +4,19 @@ import menuIcon from '../icons/menuIcon.vue';
 import notificationIcon from '../icons/notificationIcon.vue';
 import searchIcon from '../icons/searchIcon.vue';
 
+
+
 const menuStore = useMenu();
 </script>
 
 <template>
     <!-- Block Menu Button -->
-    <button 
-    v-on:click="menuStore.toggleMenu()"
-    class="p-1  rounded-md border active:scale-110 ease-in-out duration-200 active:bg-zinc-200">
+    <button v-on:click="menuStore.toggleMenu()"
+        class="p-1  rounded-md border active:scale-110 ease-in-out duration-200 active:bg-zinc-200">
         <component :is="menuIcon" class="w-7 h-7"></component>
     </button>
     <!-- End Block Menu Button -->
 
-    <p>{{ menuStore.isLoadMenu ? 'Loaded' : 'Not Loaded' }}</p>
 
     <div class="flex flex-row justify-end items-center gap-4">
 
@@ -50,10 +50,12 @@ const menuStore = useMenu();
         <!-- Profile -->
         <div class="flex flex-row justify-end gap-3 items-center">
             <!-- Block Name -->
-            <p>Jonh San</p>
+            <p class=" max-md:hidden">Jonh San</p>
             <!-- End Block Name -->
-            <div class="size-10 rounded-full active:border bg-blue-500">
-                <img src="../../assets/images/profile.png" alt="Error" class=" object-cover ">
+            <div class=" size-10">
+                <div class="size-10 rounded-full active:border bg-blue-500">
+                    <img src="../../assets/images/profile.png" alt="Error" class=" object-cover size-10 ">
+                </div>
             </div>
         </div>
         <!-- End Profile -->

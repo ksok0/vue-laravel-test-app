@@ -8,29 +8,34 @@ const menuStore = useMenu();
 </script>
 
 <template>
-  <div class="flex flex-row justify-start items-start bg-slate-50">
+  <div class="flex flex-row justify-start items-start">
     <!-- Block Side-bar -->
     <aside
-      class="ease-in-out duration-1000 z-50"
-      :class="menuStore.isLoadMenu ? 'w-72' : 'w-16'"
-      aria-label="Sidebar"
+      class="ease-in-out duration-1000 fixed top-0 left-0 z-50"
+      :class="menuStore.isLoadMenu ? 'w-3/12' : 'w-20 '"
     >
       <div class="w-full h-screen border-r bg-white shadow-r-1">
         <SidebarView />
       </div>
     </aside>
     <!-- End Block Sidebar -->
-    <main class="w-full max-h-screen overflow-y-auto">
-      <!-- Block Nav-bar -->
+
+    <!-- Block Nav-bar -->
+    <header
+      class="fixed right-0 top-0 ease-in-out duration-1000 z-40"
+      :class="menuStore.isLoadMenu ? 'w-9/12' : 'w-11/12'"
+    >
       <nav
-        class="flex flex-row justify-between items-center  bg-white shadow-md py-2 px-3 fixed top-0 right-0 ease-in-out duration-1000"
-        :class="menuStore.isLoadMenu ? 'w-[87%]' : 'w-[97%]'"
-        aria-label="Navigation"
+        class="w-7/5 h-14 flex flex-row justify-between items-center p-3 bg-white shadow-sm"
       >
         <NavbarView />
       </nav>
-      <!-- End Block Nav-bar -->
-      <div class="mt-14 p-2">
+    </header>
+    <!-- End Block Nav-bar -->
+
+    <main class="w-full z-10">
+      <!-- Scrollable Content -->
+      <div class="h-full overflow-y-auto p-3">
         <RouterView />
       </div>
     </main>
